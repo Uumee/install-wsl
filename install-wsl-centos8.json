@@ -1,5 +1,4 @@
 {
-    "ConfigFile": ".\\install-wsl.json",
     "IsRemainImage": true,
     "IsRemainContainer": false,
     "TargetContainerName": "quay.io/centos/centos:centos8",
