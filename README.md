@@ -48,3 +48,4 @@ Install WSL2 distribution from docker images.
 - [my twitter](https://twitter.com/uumee_san)
 
 ## Licensce
+MIT License
