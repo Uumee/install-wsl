@@ -1,0 +1,22 @@
+{
+    "__Comments": [
+        "install-wsl.ps1 を使用して RockyLinux をインストールするconfigです。",
+        "WslInitialCommands(初期化用コマンド)にて、genieをインストールし、systemctlコマンドを使用可能にしています。",
+        "ただし、デフォルトでは、genieが起動していないので、手動で起動するか、以下のURL等を参考に自動起動設定を入れてください。",
+        "自動起動設定をWslInitialCommands内で入れたかったが、.bashrcとかをいじろうとしたけど、難しそうなのでやめた。"
+    ],
+    "IsRemainImage": true,
+    "IsRemainContainer": false,
+    "TargetContainerName": "rockylinux/rockylinux:8",
+    "InstallWslHomePath" : "C:\\WSL",
+    "WslName": "RockyLinux",
+    "IsSetDefault": true,
+    "WslInitialCommands": [
+        "dnf update -y",
+        "dnf install -y vim wget zip unzip procps python39 epel-release",
+        "alternatives --set python3 /usr/bin/python3.9",
+        "wget https://github.com/arkane-systems/genie/releases/download/v2.3/genie-2.3-1.fc34.x86_64.rpm -P /tmp/",
+        "dnf install -y /tmp/genie-2.3-1.fc34.x86_64.rpm",
+        "python3 -m pip install psutil"
+    ]
+}
